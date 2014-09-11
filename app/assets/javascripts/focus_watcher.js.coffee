@@ -13,9 +13,9 @@ class FocusWatcher
     @elements.push(element) for element in $(element)
 
   constructor: ->
-    $(document).on 'click', (e) => @_changeFocus(e.target)
+    $(document).on 'click', (e) => @changeFocus(e.target)
 
-  _changeFocus: (target) ->
+  changeFocus: (target) =>
     return unless target?
     cleanTarget = if target instanceof jQuery then target.get(0) else target
     return if @focus.current == cleanTarget
