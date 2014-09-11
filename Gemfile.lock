@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    focus_watcher (0.0.3)
+    focus_watcher (0.0.4)
       rails (>= 3.2)
 
 GEM

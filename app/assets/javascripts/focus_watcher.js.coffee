@@ -34,8 +34,8 @@ class FocusWatcher
     @focus.current
 
   _processChange: ->
-    @_sendDefocused(parent) for parent in @focus.previousObserved
-    @_sendFocused(parent)   for parent in @focus.currentObserved
+    @_sendDefocused(parent) if @focus.currentObserved.indexOf(parent) is -1 for parent in @focus.previousObserved
+    @_sendFocused(parent)   if @focus.previousObserved.indexOf(parent) is -1 for parent in @focus.currentObserved
 
 
   _sendFocused: (target) =>
