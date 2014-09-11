@@ -39,11 +39,9 @@ class FocusWatcher
 
 
   _sendFocused: (target) =>
-    console.log(target, 'focused')
     $(target).trigger('focused', [@focus.previous, @focus.current])
 
   _sendDefocused: (target) =>
-    console.log(target, 'defocused')
     $(target).trigger('defocused', [@focus.previous, @focus.current])
 
 window.FocusWatcher = new FocusWatcher
