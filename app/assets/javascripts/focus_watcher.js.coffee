@@ -24,7 +24,7 @@ class FocusWatcher
     @focus.current  = cleanTarget
     # Копируем предыдущих предков
     @focus.previousParents = @focus.currentParents
-    @focus.currentParents = $(@focus.current).parents().toArray()
+    (@focus.currentParents = $(@focus.current).parents().toArray()).unshift(cleanTarget)
     # Копируем предыдущие контроллируемые элементы
     @focus.previousObserved = @focus.currentObserved
     @focus.currentObserved = []
