@@ -1,8 +1,9 @@
 PATH
   remote: .
   specs:
-    seedman (0.0.1)
+    seedman (0.0.2)
       rails (>= 4.1)
+      ruby-progressbar (~> 1.4)
 
 GEM
   remote: https://rubygems.org/
@@ -63,6 +64,7 @@ GEM
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
     rake (10.3.2)
+    ruby-progressbar (1.5.1)
     sprockets (2.12.2)
       hike (~> 1.2)
       multi_json (~> 1.0)
