@@ -1,34 +1,39 @@
-focus_watcher
+seedman
 ===========
 
-Gem для отслеживания получения и потери фокуса dom-элементами
+Gem для добавления прогресбара к сидам
 
-Gem for tracking the receipt and loss focus of dom elements
+Пример
 
+```ruby
+users: [
+          {
+            email: 'user@example.com',
+            password: '123456'
+          }
+        ]
 
-Зарегистрировав любой dom элемент
+seedman = Seedman.new(title: 'Заполнение...')
 
-```javascript
-FocusWatcher.register($('.xxx'))
+seedman.add 'Создание пользователей', users.count do
+  seedman.store.users = users.map do |attrs|
+    result = User.create!(attrs)
+    seedman.inc
+    result
+  end
+end
+
+seedman.process
 ```
 
-он будет получать событие ‘focused’ при клике по нему или любому дочернему элементу и событие ‘defocused’ при клике за его пределами, если до этого фокус был на нем
-
-```javascript
-$('.xxx').on('focused', function(){console.log('focused')})
-$('.xxx').on('defocused', function(){console.log('defocused')})
-```
+В ```seedman.store.users``` будут находиться созданные пользователи
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
-    gem 'focus_watcher'
+    gem 'seedman'
 
 And then execute:
 
     $ bundle
-
-Add this line to your application.js
-
-    //= require focus_watcher
