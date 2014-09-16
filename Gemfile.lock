@@ -2,7 +2,7 @@ PATH
   remote: .
   specs:
     seedman (0.0.1)
-      rails (>= 3.2)
+      rails (>= 4.1)
 
 GEM
   remote: https://rubygems.org/
